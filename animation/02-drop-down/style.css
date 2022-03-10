@@ -32,6 +32,12 @@ ul {
   text-align: center;
 }
 
-li {
+.dropdown-menu ul li {
+  display: none;
   padding: 16px;
+  transition: display 50s ease-in-out 50s;
+}
+
+.dropdown-menu:hover ul li{
+  display: block;
 }
