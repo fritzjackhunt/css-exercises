@@ -5,24 +5,85 @@ body {
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
   height: 72px;
   background: darkmagenta;
   color: white;
+  font-size: 32px;
+  font-weight: 900;
 }
 
-.footer {
-  height: 72px;
-  background: #eee;
-  color: darkmagenta;
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * val(--bs-gutter-y));
+  margin-right: calc(-0.5 * val(--bs-gutter-x));
+  margin-left: calc(-0.5 * val(--bs-gutter-x));
+}
+
+.row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
 }
 
 .sidebar {
+  flex: 0 0 auto;
   width: 300px;
+  height: 105vh;
   background: royalblue;
+  font-size: 24px;
+  padding: 16px 16px;
+  flex-shrink: 1;
+}
+
+.card-row {
+  flex: 0 0 auto;
+  width: 1000px;
+  padding: 32px 32px;
 }
 
 .card {
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+  height: 40vh;
+  padding: 10px 10px;
+  margin: 16px 0px 0px 0px;
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: 33.33%;
+}
+
+.sidebar ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  background: #eee;
+  color: darkmagenta;
+  margin-top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
