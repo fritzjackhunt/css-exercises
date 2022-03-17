@@ -5,6 +5,16 @@
 
 body {
   overflow: hidden;
+  color: #0e79dd;
+  opacity: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  filter: drop-shadow(0 0 0.75rem crimson);
 }
 
 .button-container {
@@ -12,6 +22,13 @@ body {
   height: 100vh;
   background-color: #ffffff;
   opacity: 100%;
+  z-index: 1;
+  transition: background-color 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+.button-container.show {
+  background-color: black;
+  opacity: 0.4;
 }
 
 #trigger-modal,
@@ -44,6 +61,12 @@ body {
   opacity: 0;
 }
 
+.popup-modal {
+  visibility: hidden;
+  transition: margin-top 0.5s ease-out, opacity 0.5s ease-out,
+    visibility 0.5s linear;
+}
+
 #close-modal {
   padding: 20px;
   color: #ffffff;
@@ -51,4 +74,24 @@ body {
   border: none;
   border-radius: 5px;
   font-weight: 600;
+}
+
+.popup-modal.show {
+  width: 30%;
+  height: 15%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+}
+
+.popup-modal.show {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0;
+  transition: margin-top 0.5s ease-out, opacity 0.5s ease-out,
+    visibility 0.5s linear;
 }

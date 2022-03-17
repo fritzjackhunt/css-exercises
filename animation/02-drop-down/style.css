@@ -32,12 +32,22 @@ ul {
   text-align: center;
 }
 
-.dropdown-menu ul li {
-  display: none;
+li {
   padding: 16px;
-  transition: display 50s ease-in-out 50s;
 }
 
-.dropdown-menu:hover ul li{
-  display: block;
+.dropdown-menu ul {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease-out;
+}
+
+.dropdown-menu:hover ul{
+  max-height: 500px;
+  transition: max-height 0.25s ease-out;
+}
+
+ul li:hover {
+  cursor: pointer;
+  background-color: rgb(240, 223, 223);
 }
